@@ -1,0 +1,23 @@
+void swap(int arr[],int i,int j)
+        {
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+        }
+        void quicksort(int arr[],int low,int high)
+        {
+            int i,j;
+            int s;//»ù×¼ 
+            if(high-low>1){
+                s=arr[high-1];
+                for(j=low,i=low;j<high-1;j++){
+                    if(arr[j]<=s){
+                        swap(arr,i,j);
+                        i++;
+                    }
+                }
+                swap(arr,i,j);
+                quicksort(arr,low,i);
+                quicksort(arr,i+1,high);
+            }
+        }
